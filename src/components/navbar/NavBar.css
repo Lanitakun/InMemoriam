@@ -1,0 +1,30 @@
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinea verticalmente los elementos */
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-brand {
+    font-size: 20px;
+}
+
+.navbar-menu {
+    display: flex;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    padding-right: 20px;
+}
+
+.navbar-menu a:hover {
+    color: #ddd;
+}
