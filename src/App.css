@@ -1,0 +1,13 @@
+/* Vecinos.css */
+.vecinos-container {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.vecino {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: calc(50% - 10px);
+}

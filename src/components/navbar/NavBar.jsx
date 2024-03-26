@@ -7,6 +7,7 @@ function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-brand">
+
                 <a href="/">InMemoriam</a>
             </div>
             <SearchBar />
