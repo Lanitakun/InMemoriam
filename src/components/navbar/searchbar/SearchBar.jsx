@@ -2,28 +2,60 @@ import { useState } from 'react';
 import "./SearchBar.css";
 
 function SearchBar() {
-    const [searchTerm, setSearchTerm] = useState('');
+    const [run, setRun] = useState('');
+    const [verifier, setVerifier] = useState('');
+    const [error, setError] = useState(null);
 
-    const handleChange = event => {
-        setSearchTerm(event.target.value);
+    const handleChangeRun = event => {
+        setRun(event.target.value);
+    };
+
+    const handleChangeVerifier = event => {
+        setVerifier(event.target.value);
     };
 
     const handleSubmit = event => {
         event.preventDefault();
-        // Aquí puedes manejar la búsqueda, por ejemplo, llamando a una API o filtrando localmente tus datos
-        console.log('Buscar: ', searchTerm);
+        if (validateRun(run, verifier)) {
+            console.log('RUN válido: ', run);
+            setError(null);
+        } else {
+            setError('RUN inválido');
+        }
+    };
+
+    const validateRun = (run, verifier) => {
+        //si falta alguno de los dos campos no se puede validar
+        if (!run || !verifier) return false;
+        let sum = 0;
+        let multiples = [2, 3, 4, 5, 6, 7, 2, 3, 4, 5];
+        run.split('').reverse().forEach((digit, index) => {
+            sum += digit * multiples[index];
+        });
+        let expectedVerifier = 11 - (sum % 11);
+        if (expectedVerifier === 10) expectedVerifier = 'K';
+        if (expectedVerifier === 11) expectedVerifier = '0';
+        return verifier.toUpperCase() === expectedVerifier.toString();
     };
 
     return (
         <form onSubmit={handleSubmit} style={{ margin: '20px', backgroundColor: 'lightgray' }}>
             <input
+                className='run-input'
                 type="text"
-                placeholder="Buscar..."
-                value={searchTerm}
-                onChange={handleChange}
-                style={{ padding: '10px', fontSize: '16px' }}
+                placeholder="Ingresar RUN..."
+                value={run}
+                onChange={handleChangeRun}
             />
-            <button type="submit" style={{ padding: '10px', fontSize: '16px' }}>Buscar</button>
+            <input
+                className='verifier-input'
+                type="text"
+                placeholder="DV..."
+                value={verifier}
+                onChange={handleChangeVerifier}
+            />
+            <button type="submit" >Buscar Persona</button>
+            {error && <p>{error}</p>}
         </form>
     );
 }

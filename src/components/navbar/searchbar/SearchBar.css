@@ -4,11 +4,18 @@ form {
     background-color: transparent !important;
 }
 
-form input {
-    width: 50%;
-    font-size: 16px;
+.run-input {
+    width: 30%;
+    font-size: 14px;
     margin-right: 10px;
     
+}
+
+.verifier-input {
+    width: 5%;
+    font-size: 14px;
+    margin-right: 10px;
+
 }
 
 form button {
