@@ -13,6 +13,18 @@ function App() {
         <Vecinos userName={"Gbor"} name={"Gbor"} />
         <Vecinos userName={"Meste"} name={"Meste"} />
         <Vecinos userName={"Watcher"} name={"Watcher"} />
+        <Vecinos userName={"Maestro"} name={"Maestro"} />
+        <Vecinos userName={"visionmedia"} name={"visionmedia"} />
+        <Vecinos userName={"c9s"} name={"Yo-An Lin"} />
+        <Vecinos userName={"fabpot"} name={"Fabien Potencier"} />
+        <Vecinos userName={"weierophinney"} name={"Matthew Weier O'Phinney"} />
+        <Vecinos userName={"springmeyer"} name={"Dane Springmeyer"} />
+        <Vecinos userName={"dcramer"} name={"David Cramer"} />
+        <Vecinos userName={"jeromeetienne"} name={"Jerome Etienne"} />
+        <Vecinos userName={"ornicar"} name={"Thibault Duplessis"} />
+        <Vecinos userName={"davglass"} name={"Dav Glass"} />
+        <Vecinos userName={"postmodern"} name={"Postmodern"} />
+        <Vecinos userName={"tmcw"} name={"Tom MacWright"} />
       </div>
     </div>
   );

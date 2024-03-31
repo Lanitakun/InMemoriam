@@ -1,31 +1,140 @@
 .navbar {
-    background-color: #333;
+    background-color: #33333377;
+    backdrop-filter: blur(10px);
     color: white;
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinea verticalmente los elementos */
+    align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
-    border-radius: 0 0 10px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.navbar-logo {
+    align-self: center;
+    margin-right: 5px;
+    width: 6vh;
 }
 
 .navbar-brand {
     font-size: 20px;
+    align-self: center;
 }
 
 .navbar-menu {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .navbar-menu a {
     color: white;
     text-decoration: none;
-    margin-left: 10px;
+    margin-left: auto;
     padding-right: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-right: 10vh;
 }
 
 .navbar-menu a:hover {
     color: #ddd;
+}
+
+.navbar-toggler {
+    display: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+form {
+    justify-content: center;
+    background-color: transparent !important;
+    margin: auto !important;
+}
+
+.run-input {
+    width: auto;
+    font-size: 14px;
+    margin-right: 10px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 10px 20px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 10px;
+    background-color: #444444;
+    border: 1px solid #f8f9fa;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Estilos para pantallas con un ancho máximo de 600px */
+@media (max-width: 600px) {
+    .navbar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+    }
+
+    .navbar-logo {
+        width: 10%;
+        margin-bottom: 0;
+        display: block;
+        align-self: center;
+    }
+
+    .navbar-brand {
+        align-self: center;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-around;
+        transition: transform 0.3s ease-out; /* Agrega una transición */
+        transform: translateX(100%); /* Inicialmente, el menú está fuera de la vista */
+        position: absolute; /* Posiciona el menú absolutamente */
+        top: 100%; /* Posiciona el menú justo debajo del toggler */
+        right: 0; /* Alinea el menú a la derecha */
+        background-color: #333; /* Agrega un color de fondo al menú */
+        border-bottom-left-radius: 7%;
+        border-bottom-right-radius: 7%;
+    }
+
+    .navbar-menu.show {
+        display: flex;
+        transform: translateX(0); /* Cuando el menú está abierto, se desplaza a la vista */
+    }
+
+    .navbar-menu a {
+        margin: 10px 0;
+        text-align: center; /* Alinea el texto al centro */
+        text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    }
+
+    .navbar-toggler {
+        display: block;
+        align-self: center;
+        margin-right: 10px; /* Agrega un margen a la derecha */
+        font-size: 20px;
+    }
 }
