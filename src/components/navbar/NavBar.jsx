@@ -2,7 +2,10 @@
 import React, { useState } from 'react';
 import logo from '/src/assets/logo.svg';
 import './NavBar.css';
-
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 function SearchBar() {
     const [run, setRun] = useState('');
@@ -43,14 +46,14 @@ function SearchBar() {
 
     return (
         <form onSubmit={handleSubmit} style={{ margin: '20px', backgroundColor: 'lightgray' }}>
-            <input
+            <TextField id="outlined-basic" label="RUN" variant="outlined"
                 className='run-input'
                 type="text"
-                placeholder="Ingresar RUN..."
+                placeholder="Ingresar RUN"
                 value={run}
-                onChange={handleChangeRun}
-            />
-            <button type="submit" >Buscar Persona</button>
+                color='primary'
+                onChange={handleChangeRun} />
+            <Button className='form-button' variant="outlined" color='primary' type="submit">Buscar</Button>
             {error && <p>{error}</p>}
         </form>
     );

@@ -54,15 +54,16 @@
 }
 form {
     justify-content: center;
+    align-items: center;
     background-color: transparent !important;
     margin: auto !important;
 }
 
-.run-input {
+#outlined-basic{
     width: auto;
+    height: 6vh;
     font-size: 14px;
     margin-right: 10px;
-    border: 1px solid #dfe1e5;
     border-radius: 24px;
     padding: 10px 20px;
     box-shadow: none;
